@@ -1,13 +1,26 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { User } from './user';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'angular-aftet-tutorial';
+  private readonly http = inject(HttpClient);
+
+  users: User[] = [];
+
+  ngOnInit() {
+    this.http
+      .get<{ data: User[] }>('https://reqres.in/api/users')
+      .subscribe((resp) => {
+        this.users = resp.data;
+      });
+  }
 }
