@@ -1,13 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { User } from './user';
 
 @Component({
   selector: 'my-app',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

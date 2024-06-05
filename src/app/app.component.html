@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let user of users">
-    #{{ user.id }} {{ user.first_name }} {{ user.last_name }}
-  </li>
+  @for (user of users; track user) {
+  <li>#{{ user.id }} {{ user.first_name }} {{ user.last_name }}</li>
+  }
 </ul>
