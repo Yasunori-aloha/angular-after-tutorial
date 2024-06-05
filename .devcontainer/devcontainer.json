@@ -24,7 +24,8 @@
 				"mosapride.zenkaku",
 				"vincaslt.highlight-matching-tag",
 				"dbaeumer.vscode-eslint",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"Angular.ng-template"
 			],
 			"settings": {
 				"editor.defaultFormatter": "esbenp.prettier-vscode",
