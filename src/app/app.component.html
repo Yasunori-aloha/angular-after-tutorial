@@ -1,7 +1,1 @@
-<ul>
-  @for (user of users; track user.id) {
-  <li>
-    <user-list-item [user]="user"></user-list-item>
-  </li>
-  }
-</ul>
+<user-list [users]="users" />

@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { User } from './user';
-import { UserListItemComponent } from './user-list-item/user-list-item.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @Component({
   selector: 'my-app',
   standalone: true,
-  imports: [UserListItemComponent],
+  imports: [UserListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
