@@ -1,24 +1,22 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
-import { User } from './user';
 import { UserListComponent } from './user-list/user-list.component';
-import { UserService } from './user.service';
+import { AppUsecase } from './app.usecase';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'my-app',
   standalone: true,
-  imports: [UserListComponent],
+  imports: [UserListComponent, CommonModule],
+  providers: [AppUsecase],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  private readonly userService = inject(UserService);
+  private readonly usecase = inject(AppUsecase);
 
-  users: User[] = [];
+  readonly state$ = this.usecase.state$;
 
   ngOnInit() {
-    this.userService.getUser().subscribe((users) => {
-      this.users = users;
-    });
+    this.usecase.initialize();
   }
 }
