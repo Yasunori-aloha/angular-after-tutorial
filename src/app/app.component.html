@@ -1,8 +1,8 @@
-@if (state$ | async; as state) {
-  @if (state.users) {
-    <user-list [users]="state.users" />
-  }
-}
+@if (state$ | async; as state) { @if (state.users) {
+<user-list [users]="state.users" />
+} }
 
 <button (click)="updateValue()">Update Value</button>
 <app-explicit-subscribe></app-explicit-subscribe>
+
+<app-async-pipe></app-async-pipe>

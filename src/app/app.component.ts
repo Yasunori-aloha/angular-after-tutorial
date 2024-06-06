@@ -4,11 +4,17 @@ import { AppUsecase } from './app.usecase';
 import { CommonModule } from '@angular/common';
 import { DataService } from './data.service';
 import { ExplicitSubscribeComponent } from './explicit-subscribe/explicit-subscribe.component';
+import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 
 @Component({
   selector: 'my-app',
   standalone: true,
-  imports: [UserListComponent, ExplicitSubscribeComponent, CommonModule],
+  imports: [
+    UserListComponent,
+    ExplicitSubscribeComponent,
+    AsyncPipeComponent,
+    CommonModule,
+  ],
   providers: [AppUsecase],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
