@@ -1,1 +1,4 @@
-<div>{{ value$ | async }}</div>
+@if (state$ | async; as state) {
+<div>1. {{ state.value }}</div>
+<div>2. {{ state.value }}</div>
+}

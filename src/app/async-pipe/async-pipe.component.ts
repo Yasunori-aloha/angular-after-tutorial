@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, combineLatest, map } from 'rxjs';
 import { DataService } from '../data.service';
 import { AsyncPipe } from '@angular/common';
+
+type State = {
+  value: any;
+};
 
 @Component({
   selector: 'app-async-pipe',
@@ -10,11 +14,11 @@ import { AsyncPipe } from '@angular/common';
   templateUrl: './async-pipe.component.html',
 })
 export class AsyncPipeComponent {
-  value$: Observable<any>;
+  readonly state$: Observable<State>;
 
   constructor(private dataService: DataService) {
-    this.value$ = this.dataService.valueChanges.pipe(
-      map((value) => `Value: ${value}`)
+    this.state$ = combineLatest([dataService.valueChanges]).pipe(
+      map(([value]) => ({ value }))
     );
   }
 }

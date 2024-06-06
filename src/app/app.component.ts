@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { UserListComponent } from './user-list/user-list.component';
 import { AppUsecase } from './app.usecase';
-import { CommonModule } from '@angular/common';
+
 import { DataService } from './data.service';
 import { ExplicitSubscribeComponent } from './explicit-subscribe/explicit-subscribe.component';
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'my-app',
@@ -13,7 +14,7 @@ import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
     UserListComponent,
     ExplicitSubscribeComponent,
     AsyncPipeComponent,
-    CommonModule,
+    AsyncPipe,
   ],
   providers: [AppUsecase],
   templateUrl: './app.component.html',
