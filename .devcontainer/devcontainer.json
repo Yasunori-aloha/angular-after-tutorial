@@ -1,40 +1,41 @@
 {
-	"name": "angular-after-tutorial",
-	"build": {
-		"context": "..",
-		"dockerfile": "../Dockerfile"
-	},
-	"runArgs": ["--name", "angular-after-tutorial"],
-	"workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace,type=bind,consistency=cached",
-	"workspaceFolder": "/workspace",
-	"mounts": [
-		"source=angular-after-tutorial-node_modules,target=/workspace/node_modules,type=volume"
-	],
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"PKief.material-icon-theme",
-				"alefragnani.Bookmarks",
-				"eamodio.gitlens",
-				"bradgashler.htmltagwrap",
-				"oderwat.indent-rainbow",
-				"1natsu.insert-br-tag",
-				"ionutvmi.path-autocomplete",
-				"shardulm94.trailing-spaces",
-				"mosapride.zenkaku",
-				"vincaslt.highlight-matching-tag",
-				"dbaeumer.vscode-eslint",
-				"esbenp.prettier-vscode",
-				"Angular.ng-template"
-			],
-			"settings": {
-				"editor.defaultFormatter": "esbenp.prettier-vscode",
-				"editor.formatOnSave": true,
-				"eslint.format.enable": true,
-				"[typescriptreact]": {
-				  "editor.defaultFormatter": "esbenp.prettier-vscode"
-				}
-			}
-		}
-	},
+  "name": "angular-after-tutorial",
+  "build": {
+    "context": "..",
+    "dockerfile": "../Dockerfile"
+  },
+  "runArgs": ["--name", "angular-after-tutorial"],
+  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=angular-after-tutorial-node_modules,target=/workspace/node_modules,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "PKief.material-icon-theme",
+        "alefragnani.Bookmarks",
+        "eamodio.gitlens",
+        "bradgashler.htmltagwrap",
+        "oderwat.indent-rainbow",
+        "1natsu.insert-br-tag",
+        "ionutvmi.path-autocomplete",
+        "shardulm94.trailing-spaces",
+        "mosapride.zenkaku",
+        "vincaslt.highlight-matching-tag",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "Angular.ng-template"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "eslint.format.enable": true,
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "editor.tabSize": 2
+      }
+    }
+  }
 }
